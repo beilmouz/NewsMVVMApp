@@ -15,6 +15,7 @@ class NewsViewModels(val newsRepository: NewsRepository): ViewModel() {
         news.postValue(Resource.Loading())
         val response = newsRepository.getNews(category, q)
         news.postValue(handleGetNews(response))
+        println("Kontol")
     }
 
     private fun handleGetNews(response: Response<News>): Resource<News>{
